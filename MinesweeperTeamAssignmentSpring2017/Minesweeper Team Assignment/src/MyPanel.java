@@ -3,9 +3,8 @@ import java.awt.Graphics;
 import java.awt.Insets;
 import java.util.Random;
 
-import javax.swing.JOptionPane;
+//import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-//Test commit and push
 public class MyPanel extends JPanel{
 	private static final long serialVersionUID = 3426940946811133635L;
 	private static final int GRID_X = 25;
@@ -102,7 +101,7 @@ public class MyPanel extends JPanel{
 
 		//Draw a mine counter on the bottom of the screen
 		g.setColor(Color.BLUE);
-		g.drawString("There Are  "+TOTAL_MINES + " Total Mines", 150, height - 25);
+		g.drawString("There Are  "+ TOTAL_MINES + " Total Mines", 100, height - 25);
 
 	}
 	

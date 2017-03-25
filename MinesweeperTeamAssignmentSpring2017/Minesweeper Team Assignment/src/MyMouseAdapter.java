@@ -6,7 +6,7 @@ import java.awt.event.MouseEvent;
 //import java.util.Random;
 
 import javax.swing.JFrame;
-//import javax.swing.JOptionPane;
+import javax.swing.JOptionPane;
 
 public class MyMouseAdapter extends MouseAdapter{
 	//private Random generator = new Random();
@@ -99,11 +99,13 @@ public class MyMouseAdapter extends MouseAdapter{
 						Color newColor = null;
 						if (!myPanel.checkForMines(myPanel.mouseDownGridX,myPanel.mouseDownGridY)){ // checks if mine is clicked																					
 							myPanel.checkAdjacent(myPanel.mouseDownGridX, myPanel.mouseDownGridY);
-							newColor = Color.GRAY;
-							
-															
+							newColor = Color.GRAY;			
 						}
 
+						if(myPanel.mineArray[gridX][gridY] == 1){
+							newColor = Color.BLACK;
+						}
+						
 						//A mine is clicked
 						//cell is colored Black
 						//Game over message is shown, and application is terminated

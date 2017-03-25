@@ -4,7 +4,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		JFrame myFrame = new JFrame("ICOM Minesweeper");
+		JFrame myFrame = new JFrame("ICOM4015 Minesweeper");
 		myFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		myFrame.setLocation(400, 150);
 		myFrame.setSize(400, 400);
