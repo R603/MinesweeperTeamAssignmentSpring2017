@@ -9,8 +9,9 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 public class MyMouseAdapter extends MouseAdapter{
-	//private Random generator = new Random();
-
+	
+	public static JOptionPane j = new JOptionPane();
+	
 	public void mousePressed(MouseEvent e){
 		switch (e.getButton()){
 		case 1:		//Left mouse button being pressed
@@ -104,6 +105,8 @@ public class MyMouseAdapter extends MouseAdapter{
 
 						if(myPanel.mineArray[gridX][gridY] == 1){
 							newColor = Color.BLACK;
+							String s = new String("LOSER");
+							JOptionPane.showMessageDialog(c, s, "GAME OVER", 1);
 						}
 						
 						//A mine is clicked
