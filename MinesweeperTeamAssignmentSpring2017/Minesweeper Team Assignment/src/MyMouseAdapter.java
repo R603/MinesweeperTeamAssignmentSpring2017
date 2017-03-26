@@ -15,7 +15,6 @@ public class MyMouseAdapter extends MouseAdapter{
 			while (!(c instanceof JFrame)){
 				c = c.getParent();
 				if (c == null){
-					
 					return;
 				}
 			}
@@ -33,6 +32,7 @@ public class MyMouseAdapter extends MouseAdapter{
 			myPanel.mouseDownGridY = myPanel.getGridY(x, y);
 			myPanel.repaint();
 			break;
+			
 		case 3:		//Right mouse button
 			Component c2 = e.getComponent();
 			while (!(c2 instanceof JFrame)){
@@ -56,8 +56,8 @@ public class MyMouseAdapter extends MouseAdapter{
 			myPanel2.mouseDownGridY = myPanel2.getGridY(x3, y3);
 			myPanel2.repaint();
 			break;
-		default:
 			
+		default:
 			break;
 		}
 	}
@@ -100,8 +100,8 @@ public class MyMouseAdapter extends MouseAdapter{
 							}
 						}
 
-						if(myPanel.mineArray[gridX][gridY] == 1)
-						{if (myPanel.colorArray[myPanel.mouseDownGridX][myPanel.mouseDownGridY] == Color.WHITE){
+						if(myPanel.mineArray[myPanel.mouseDownGridX][myPanel.mouseDownGridY] == 1){ // ifGameIsWon's counterpart
+						if (myPanel.colorArray[myPanel.mouseDownGridX][myPanel.mouseDownGridY] == Color.WHITE){
 							myPanel.colorArray[myPanel.mouseDownGridX][myPanel.mouseDownGridY] = Color.BLACK;
 							myPanel.repaint();
 								 }
@@ -114,8 +114,8 @@ public class MyMouseAdapter extends MouseAdapter{
 					}
 				}
 			}
-			myPanel.repaint();
 			break;
+			
 		case 3:		//Right mouse button
 			Component d = e.getComponent();
 			while (!(d instanceof JFrame)) {
@@ -136,6 +136,7 @@ public class MyMouseAdapter extends MouseAdapter{
 			myPanel2.y = y3;
 			int gridX2 = myPanel2.getGridX(x3, y3);
 			int gridY2 = myPanel2.getGridY(x3, y3);
+			
 			if ((myPanel2.mouseDownGridX == gridX2) && (myPanel2.mouseDownGridY == gridY2)){
 				if (gridX2 != -1 && gridY2 != -1){				
 					if (myPanel2.colorArray[myPanel2.mouseDownGridX][myPanel2.mouseDownGridY] == Color.WHITE){
@@ -148,11 +149,9 @@ public class MyMouseAdapter extends MouseAdapter{
 					}					
 				}
 			}
-			
-			
 			break;
-		default:
 			
+		default:
 			break;
 		}
 	}
