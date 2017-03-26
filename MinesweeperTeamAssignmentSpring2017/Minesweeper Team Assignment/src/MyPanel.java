@@ -3,7 +3,7 @@ import java.awt.Graphics;
 import java.awt.Insets;
 import java.util.Random;
 
-//import javax.swing.JOptionPane;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 public class MyPanel extends JPanel{
 	private static final long serialVersionUID = 3426940946811133635L;
@@ -150,7 +150,23 @@ public class MyPanel extends JPanel{
 		}
 		return y;
 	}
-	
+	public boolean ifGameIsWon(){ //Checks if the player has won
+				int revealedCells = 0;
+				for (int i = 0; i < TOTAL_ROWS; i++){
+					for (int j = 0; j < TOTAL_COLUMNS; j++){
+						if (colorArray[i][j] == Color.GRAY){
+							revealedCells++;
+						}
+					}
+				}
+				if (revealedCells >= TOTAL_ROWS * TOTAL_COLUMNS - TOTAL_MINES){
+					this.repaint();
+					JOptionPane.showMessageDialog(null, "YOU WON!");
+					return true;
+				}
+				return false;
+			}
+			
 	public boolean checkForMines(int x, int y){ //Checks if a mine is present in a cell
 		return mineArray[x][y] == 1;		
 	}
