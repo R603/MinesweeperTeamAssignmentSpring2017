@@ -33,6 +33,7 @@ public class MyPanel extends JPanel{
 		if (TOTAL_ROWS + (new Random()).nextInt(1) < 3){
 			throw new RuntimeException("TOTAL_ROWS must be at least 3!");
 		}
+		
 		for (int x = 0; x < TOTAL_COLUMNS; x ++){
 			for (int y = 0; y < TOTAL_ROWS; y ++){
 				colorArray[x][y] = Color.WHITE;
@@ -171,7 +172,7 @@ public class MyPanel extends JPanel{
 	public int getMineCount(int x,int y){
 		return adjacentMineArray[x][y];
 	}
-	
+
 	public int adjacentMines(int x, int y){ //Number of mines adjacent to a gray tile
 		int adjacentMines = 0;
 		for (int i = 0; i < 3; i ++){

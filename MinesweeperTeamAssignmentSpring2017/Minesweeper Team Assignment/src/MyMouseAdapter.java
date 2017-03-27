@@ -101,10 +101,16 @@ public class MyMouseAdapter extends MouseAdapter{
 						}
 
 						if(myPanel.mineArray[myPanel.mouseDownGridX][myPanel.mouseDownGridY] == 1){ // ifGameIsWon's counterpart
-						if (myPanel.colorArray[myPanel.mouseDownGridX][myPanel.mouseDownGridY] == Color.WHITE){
-							myPanel.colorArray[myPanel.mouseDownGridX][myPanel.mouseDownGridY] = Color.BLACK;
-							myPanel.repaint();
-								 }
+							if (myPanel.colorArray[myPanel.mouseDownGridX][myPanel.mouseDownGridY] == Color.WHITE){
+								myPanel.colorArray[myPanel.mouseDownGridX][myPanel.mouseDownGridY] = Color.BLACK;
+								myPanel.repaint();
+								for (int i=0; i<myPanel.adjacentMineArray.length; i++){
+									for(int j=0; j<myPanel.adjacentMineArray.length; j++){
+										if(myPanel.mineArray[i][j] == 1)
+										myPanel.colorArray[i][j] = Color.BLACK;
+									}
+								}
+							}
 							JOptionPane.showMessageDialog(c, "YOU LOST", "GAME OVER", 1);
 							myFrame.dispose();
 						}
